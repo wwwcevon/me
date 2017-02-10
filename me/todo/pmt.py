@@ -42,7 +42,10 @@ class PMT:
 
         return [self.tasks[str(_)]['title'] for _ in my_tasks]
 
-if __name__ == '__main__':
-    pmt = PMT()
-    for _ in pmt.my_tasks:
-        print(_)
+    @staticmethod
+    def do():
+        rs = ''
+        pmt = PMT()
+        for _ in pmt.my_tasks:
+            rs = rs + _ + '\n'
+        return rs

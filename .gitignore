@@ -1,0 +1,4 @@
+.pyc
+me.egg-info/
+__pycache__/
+.virtualenv
