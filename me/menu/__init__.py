@@ -9,8 +9,8 @@ from me.todo.pmt import PMT
 
 MENU_DOC = """
 1. Check PMT
-q. Exit
-Input choice:
+
+Input choice, q to exit ...
 """
 
 def menu():
