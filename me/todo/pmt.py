@@ -43,7 +43,7 @@ class PMT:
         return [self.tasks[str(_)]['title'] for _ in my_tasks]
 
     @staticmethod
-    def do():
+    def check():
         rs = ''
         pmt = PMT()
         for _ in pmt.my_tasks:

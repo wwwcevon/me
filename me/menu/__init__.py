@@ -6,9 +6,13 @@ from multiprocessing import Process
 from getch import getch
 
 from me.todo.pmt import PMT
+from me.pc.screen_saver import ScreenSaver
+from me.pc.browser import Browser
 
 MENU_DOC = """
-1. Check PMT
+p. Check PMT
+l. Lock screen
+d. Dingtalk
 
 Input choice, q to exit ...
 """
@@ -16,6 +20,11 @@ Input choice, q to exit ...
 def menu():
     if len(sys.argv) == 1:
         interactive()
+    else:
+        func = select(sys.argv[1])
+        if func is None:
+            exit()
+        print(func())
 
 def interactive():
     clear()
@@ -25,9 +34,11 @@ def interactive():
     if func is None:
         print('Unavailable choice')
         press_any_key_to_continue()
-        return
+        interactive()
     clear()
     rs = wait(func)
+    if rs is None:
+        exit()
     clear()
     print(rs)
     press_any_key_to_continue()
@@ -38,7 +49,9 @@ def select(choice):
     if choice == 'q':
         exit()
     availabes = {
-        '1':PMT.do,
+        'p':PMT.check,
+        'l':ScreenSaver.lock,
+        'd':Browser.dingtalk,
         'q':exit
     }
     func = availabes.get(choice, None)
