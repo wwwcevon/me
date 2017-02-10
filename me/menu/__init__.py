@@ -10,9 +10,10 @@ from me.pc.screen_saver import ScreenSaver
 from me.pc.browser import Browser
 
 MENU_DOC = """
-p. Check PMT
-l. Lock screen
-d. Dingtalk
+Check P̱MT
+Ḻock screen
+Ḏingtalk
+S̱earch in Google
 
 Input choice, q to exit ...
 """
@@ -52,6 +53,7 @@ def select(choice):
         'p':PMT.check,
         'l':ScreenSaver.lock,
         'd':Browser.dingtalk,
+        's':Browser.search,
         'q':exit
     }
     func = availabes.get(choice, None)
