@@ -8,12 +8,14 @@ from getch import getch
 from me.todo.pmt import PMT
 from me.pc.screen_saver import ScreenSaver
 from me.pc.browser import Browser
+from me.pc.wm import WM
 
 MENU_DOC = """
 Check P̱MT
 Ḻock screen
 Ḏingtalk
 S̱earch in Google
+O̱pen promgram
 
 Input choice, q to exit ...
 """
@@ -25,7 +27,9 @@ def menu():
         func = select(sys.argv[1])
         if func is None:
             exit()
-        print(func())
+        rs = func(*sys.argv[2:])
+        if type(rs) is str:
+            print(rs)
 
 def interactive():
     clear()
@@ -54,6 +58,7 @@ def select(choice):
         'l':ScreenSaver.lock,
         'd':Browser.dingtalk,
         's':Browser.search,
+        'o':WM.switch_or_open,
         'q':exit
     }
     func = availabes.get(choice, None)

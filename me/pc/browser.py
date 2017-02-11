@@ -15,3 +15,5 @@ class Browser:
         to_search = proc.stdout.decode()
         search_command = "chromium 'https://www.google.com/#q=%s'" % to_search
         os.system(search_command)
+        from me.pc.wm import WM
+        WM.switch_or_open('chromium')
