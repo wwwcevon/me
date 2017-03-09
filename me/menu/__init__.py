@@ -7,6 +7,7 @@ from getch import getch
 
 from me.todo.pmt import PMT
 from me.pc.screen_saver import ScreenSaver
+from me.pc.screenshot import Screenshot
 from me.pc.browser import Browser
 from me.pc.wm import WM
 
@@ -59,7 +60,8 @@ def select(choice):
         'd':Browser.dingtalk,
         's':Browser.search,
         'o':WM.switch_or_open,
-        'q':exit
+        'q':exit,
+        'ss':Screenshot.area
     }
     func = availabes.get(choice, None)
     return func
