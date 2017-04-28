@@ -6,4 +6,4 @@ class ScreenSaver:
 
     @staticmethod
     def lock():
-        os.system('xset -display :0 dpms force off ;xtrlock')
+        os.system('xset dpms force off ;xtrlock')
