@@ -6,5 +6,5 @@ class Screenshot:
 
     @staticmethod
     def area():
-        os.system('gnome-screenshot -a -f /home/kevin/Desktop/screenshot.jpeg')
+        os.system('maim -st 0 | xclip -selection clipboard -t image/png')
 
