@@ -63,7 +63,8 @@ def select(choice):
         'o':WM.switch_or_open,
         'q':exit,
         'ss':Screenshot.area,
-        't':Timecard.today
+        't':Timecard.today,
+        'timecard_notify':Timecard.notify
     }
     func = availabes.get(choice, None)
     return func
