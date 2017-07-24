@@ -1,5 +1,6 @@
 requests
 getch
 Pillow
+mysql-connector==2.1.4
 
 -e .

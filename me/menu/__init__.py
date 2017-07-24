@@ -10,6 +10,7 @@ from me.pc.screen_saver import ScreenSaver
 from me.pc.screenshot import Screenshot
 from me.pc.browser import Browser
 from me.pc.wm import WM
+from me.job.timecard import Timecard
 
 MENU_DOC = """
 Check P̱MT
@@ -61,7 +62,8 @@ def select(choice):
         's':Browser.search,
         'o':WM.switch_or_open,
         'q':exit,
-        'ss':Screenshot.area
+        'ss':Screenshot.area,
+        't':Timecard.today
     }
     func = availabes.get(choice, None)
     return func
