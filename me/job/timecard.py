@@ -52,7 +52,7 @@ class Timecard:
                 hour=clock_in.hour+9,
                 minute=clock_in.minute,
                 second=clock_in.second)
-            if  now.minute == clock_out.minute:
+            if  now.minute == clock_out.minute and now.hour == clock_out.hour:
                 data = {
                     'msgtype': 'text',
                     'text': {
