@@ -59,6 +59,7 @@ def select(choice):
         'p':PMT.check,
         'l':ScreenSaver.lock,
         'd':Browser.dingtalk,
+        'w':Browser.wechat,
         's':Browser.search,
         'o':WM.switch_or_open,
         'q':exit,

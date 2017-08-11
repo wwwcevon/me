@@ -7,7 +7,11 @@ class Browser:
 
     @staticmethod
     def dingtalk():
-        os.system('chromium --app=https://im.dingtalk.com/ ')
+        os.system('chromium --app=https://im.dingtalk.com/')
+
+    @staticmethod
+    def wechat():
+        os.system('chromium --app=https://wx.qq.com/')
 
     @staticmethod
     def search():

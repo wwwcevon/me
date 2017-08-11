@@ -26,12 +26,19 @@ class Timecard:
 
     @staticmethod
     def notify():
-        api_url = 'https://oapi.dingtalk.com/robot/send?access_token=ba08001b38a6af724138569396eebb45fd6967884868f490787fea743ddd34ac'
+        api_url = [
+            'https://oapi.dingtalk.com/robot/send?access_token=ba08001b38a6af724138569396eebb45fd6967884868f490787fea743ddd34ac',
+            'https://oapi.dingtalk.com/robot/send?access_token=640dba2a6afa5f500a67f994c20263f41441040b5566974c52f7a0419e2d4942'
+        ]
         user_ids = {
-            13: ['18616749402'],
-            16: ['15996316757'],
-            19: ['13162929931'],
-            31: ['18616930697']
+            13: ['18616749402',0],
+            16: ['15996316757',0],
+            19: ['13162929931',0],
+            31: ['18616930697',0],
+            57: ['15800936385',0],
+            51: ['15901611079',0],
+            18: ['',1],
+            64: ['18321427305',1]
         }
         cnx = mysql.connector.connect(user='root', password='qianka',
                                       host='172.16.3.250',
@@ -59,10 +66,10 @@ class Timecard:
                         'content': '你可以下班啦～'
                     },
                     'at': {
-                        'atMobiles': [user_ids[user_id]]
+                        'atMobiles': [user_ids[user_id][0]]
                     }
                 }
-                rs = requests.post(api_url, json=data)
+                rs = requests.post(api_url[user_ids[user_id][1]], json=data)
                 print('notify %s' % user_id)
         cursor.close()
         cnx.close()
