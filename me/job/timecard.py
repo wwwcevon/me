@@ -43,6 +43,7 @@ class Timecard:
             235: ['18717844230',0],
             231: ['18221331934',0],
             15: ['15316098561',0],
+            45: ['13701816553', 0],
         }
         cnx = mysql.connector.connect(user='root', password='qianka',
                                       host='172.16.3.250',
